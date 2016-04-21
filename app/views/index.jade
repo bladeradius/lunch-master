@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 #{title}
+  div(id='main-surface')
+    div
+      | It's time
+    div
+      editor-component(params='configuration: getEditorConfiguration()')    
+  
+  include ../templates/editor.html
+  
+  script(src='/js/components/editor.js')  
+  script(type='text/javascript')
+    include ../js/index.js
