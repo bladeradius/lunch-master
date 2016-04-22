@@ -6,13 +6,11 @@ var LunchSchema = new Schema({
   location: String,
   date: Date,
   participants: [{
-    name: String  
+    type: mongoose.Schema.Types.ObjectId, ref: 'Participant'  
   }],
   protestors: [{
-    name: String,
-    justification: String
+    type: mongoose.Schema.Types.ObjectId, ref: 'Participant'  
   }]
 });
 
 mongoose.model('Lunch', LunchSchema);
-

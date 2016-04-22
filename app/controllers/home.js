@@ -10,13 +10,10 @@ module.exports = function (app) {
 router.get('/', function (req, res, next) {
   Lunch.find(function (err, lunches) {
     if (err) return next(err);
-    res.render('index', {
-      title: 'LUNCH LOCKER',
-      lunches: lunches
-    });
+    res.render('index');
   });
 });
 
-router.get('/update', function(req, res, next){
-  res.json({ "testing": "this!" });  
+router.post('/save', function(req, res, next){
+  console.log(req);  
 });

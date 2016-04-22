@@ -2,6 +2,12 @@ $(document).ready(function(){
     ko.components.register('editor-component', {
        viewModel: {
            createViewModel:  function(params, componentInfo){
+               $.extend(params.configuration, {
+                   url: {
+                    save: '/save'           
+                   }
+               });
+               
                return new Editor(params);
            }
        },
@@ -10,8 +16,7 @@ $(document).ready(function(){
     
     var vm = {
         getEditorConfiguration: function(){
-            return {
-            };
+            return { };
         }
     };
     
